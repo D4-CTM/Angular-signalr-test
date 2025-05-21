@@ -1,0 +1,19 @@
+.list-div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.chart-div {
+  width: 200px;
+  height: 300px;
+  box-sizing: border-box;
+  border: solid 1px #ccc;
+  padding: 10px;
+  background: white;
+  cursor: move;
+}

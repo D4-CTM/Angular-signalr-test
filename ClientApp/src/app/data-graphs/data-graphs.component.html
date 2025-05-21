@@ -1,0 +1,14 @@
+<h1 style="text-align: center;">Data graphs</h1>
+
+<div
+  *ngIf="charts?.length"
+  class="list-div"
+  [sortablejs]="charts"
+  [sortablejsOptions]="{ animation: 150, onEnd: onChartReorder.bind(this) }">
+  <div class="chart-div" *ngFor="let chart of charts;">
+    <echarts
+      [options]="chart"
+      style="width: 200px; height: 300px;">
+    </echarts>
+  </div>
+</div>
