@@ -1,0 +1,52 @@
+<h1 id="tableLabel">Todo app</h1>
+
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <input name="taskName" [(ngModel)]="model.taskName" required>
+  <input name="doDate" type="datetime-local" [(ngModel)]="model.doDate" required>
+  <button type="submit">Add task</button>
+</form>
+
+<div class="example-container">
+  <h2>To do</h2>
+
+  <div
+    cdkDropList
+    #todoList="cdkDropList"
+    class="example-list"
+    [cdkDropListData]="todoItems"
+    [cdkDropListConnectedTo]="[doneList]"
+    (cdkDropListDropped)="dropWithin($event)">
+    <div class="example-box" *ngFor="let item of todoItems" cdkDrag>{{item.taskName}}</div>
+  </div>
+</div>
+
+<div class="example-container">
+  <h2>Done</h2>
+
+  <div
+    cdkDropList
+    #doneList="cdkDropList"
+    class="example-list"
+    [cdkDropListData]="completedItems"
+    [cdkDropListConnectedTo]="[todoList]"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of completedItems" cdkDrag>{{item.taskName}}</div>
+  </div>
+</div>
+
+<!--
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="missingItems().length">
+  <thead>
+    <tr>
+      <th>Do date</th>
+      <th>Task name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of missingItems()">
+      <td>{{ item.doDate }}</td>
+      <td>{{ item.taskName }}</td>
+    </tr>
+  </tbody>
+</table>
+-->

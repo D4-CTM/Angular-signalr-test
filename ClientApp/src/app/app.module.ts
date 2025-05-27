@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { DataGraphsComponent } from './data-graphs/data-graphs.component';
+import { TodoAppComponent } from './todo-app/todo-app.component';
 
 import { NgxEchartsModule } from 'ngx-echarts'
 import { SortablejsModule } from '@maksim_m/ngx-sortablejs';
@@ -22,7 +23,8 @@ import { SortablejsModule } from '@maksim_m/ngx-sortablejs';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    DataGraphsComponent
+    DataGraphsComponent,
+    TodoAppComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -35,6 +37,7 @@ import { SortablejsModule } from '@maksim_m/ngx-sortablejs';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'data-graphs', component: DataGraphsComponent },
+      { path: 'todo-app', component: TodoAppComponent },
     ]),
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts'),

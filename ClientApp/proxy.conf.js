@@ -7,10 +7,11 @@ const PROXY_CONFIG = [
   {
     context: [
       "/weatherforecast",
+      "/todoapp",
       "/hubs/graphs",
    ],
     proxyTimeout: 10000,
-    target: "https://localhost:7031",
+    target: target,
     ws: true,
     changeOrigin: true,
     logLevel: "debug",
